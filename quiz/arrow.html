@@ -19,7 +19,8 @@
         window.addEventListener('load', function() {
             obj.hello();
         });
-        document.getElementById('btn').addEventListener('click', function() {
+        document.getElementById('btn').addEventListener('click', ()=> {
+            alert(this)
             obj.hello();
         });
     </script>
