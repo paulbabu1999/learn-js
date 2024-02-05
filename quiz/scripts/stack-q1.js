@@ -3,6 +3,7 @@ class PStack {
   constructor() {
     this.#id = 1;
     this._persons = [];
+
   }
 
   showId() {
@@ -15,13 +16,21 @@ class PStackImpl extends PStack {
   constructor() {
     super();
   }
+  set persons(persons){
+    this._persons=persons;
+  }
+  get persons(){
+    return this._persons;
+  }
 
   push(p) {
-    return this._persons.push(p)
+    console.log(this._persons);
+
+    return this._persons.push(p);
   }
 
   pop() {
-    return this._persons.pop().age
+    return this._persons.pop().age;
   }
 }
 

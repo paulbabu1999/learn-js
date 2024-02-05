@@ -19,12 +19,31 @@
       // Get the input value and convert it to an array of numbers
       const inputElement = document.getElementById('numbersInput');
       const numbersString = inputElement.value;
-      const numbers = numbersString.split(',').map(Number);
+
+        const numbers = numbersString.split(',').map(Number);
+
+
 
       // Using map to calculate the square root of each number
       // Use Math.sqrt(number) to calculate sq root
       const squareRoots = numbers.map(number => {
-        return 0
+        try{
+          if (number < 0) {
+    throw "Number should be positive";
+  }
+          return Math.sqrt(number);
+
+        }
+        catch(err) {
+
+          console.log("Input " + err);
+          return NaN
+
+        }
+        finally {
+            document.getElementById("numbersInput").value = '';
+        }
+
     });
 
       // Displaying the original and transformed arrays
